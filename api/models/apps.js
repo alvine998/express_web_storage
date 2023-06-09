@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('users', {
+  return sequelize.define('apps', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -8,28 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     name: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    email: {
-      type: DataTypes.STRING(100),
-      allowNull: false
-    },
-    photo: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    },
-    role: {
-      type: DataTypes.ENUM('admin','super_admin'),
-      allowNull: false,
-      defaultValue: "admin"
-    },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false
-    },
-    phone: {
-      type: DataTypes.STRING(13),
+      type: DataTypes.STRING(255),
       allowNull: false
     },
     created_on: {
@@ -42,19 +21,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     deleted: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: 0
-    },
-    app_id: {
-      type: DataTypes.STRING(100),
-      allowNull: true,
-      defaultValue: "id.storage.app.general"
     }
   }, {
     sequelize,
-    tableName: 'users',
-    hasTrigger: true,
+    tableName: 'apps',
     timestamps: false,
     indexes: [
       {

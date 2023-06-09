@@ -7,6 +7,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
+    app_id: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      defaultValue: "id.storage.app.general"
+    },
     name: {
       type: DataTypes.STRING(255),
       allowNull: false

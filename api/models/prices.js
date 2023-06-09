@@ -50,6 +50,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: 0
+    },
+    app_id: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+      defaultValue: "id.storage.app.general"
     }
   }, {
     sequelize,

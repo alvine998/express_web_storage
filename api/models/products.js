@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: false
     },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: true
@@ -40,6 +44,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: 0
+    },
+    app_id: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+      defaultValue: "id.storage.app.general"
     }
   }, {
     sequelize,

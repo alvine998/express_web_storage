@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+require('dotenv').config();
 
 var corsOptions = {
     origin: "http://localhost:8081"
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to DB Storages" });
 });
+require('./api/routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
